@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct RecipeListView: View {
+    // Give Access to RecipeModel
+    @EnvironmentObject var model:RecipeModel
     // Reference the ViewModel
-    @ObservedObject var model = RecipeModel()
+    //        @ObservedObject var model = RecipeModel()
     
     var body: some View {
-        
+    
         NavigationView {
             List(model.recipes) {r in
-                
+                 
                 NavigationLink(
                     destination: RecipeDetailView(recipe: r),
                     label: {
