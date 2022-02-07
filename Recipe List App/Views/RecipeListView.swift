@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecipeListView: View {
-    // Reference the view model
+    // Reference the ViewModel
     @ObservedObject var model = RecipeModel()
     
     var body: some View {

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6705876027B1A53600CA6FA4 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6705875F27B1A53600CA6FA4 /* RecipeListView.swift */; };
 		67A0263F279790EB00C5B7FA /* Recipe_List_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A0263E279790EB00C5B7FA /* Recipe_List_App.swift */; };
 		67A02643279790ED00C5B7FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67A02642279790ED00C5B7FA /* Assets.xcassets */; };
 		67A02646279790ED00C5B7FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67A02645279790ED00C5B7FA /* Preview Assets.xcassets */; };
 		67A026522797918200C5B7FA /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 67A026512797918200C5B7FA /* recipes.json */; };
-		67CF6DB227AE09C3003DE916 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF6DB127AE09C3003DE916 /* RecipeListView.swift */; };
 		67CF6DB427AE09CB003DE916 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF6DB327AE09CB003DE916 /* RecipeModel.swift */; };
 		67CF6DB627AE09D7003DE916 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF6DB527AE09D7003DE916 /* Recipe.swift */; };
 		67CF6DB827AE09DE003DE916 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF6DB727AE09DE003DE916 /* DataService.swift */; };
@@ -19,12 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6705875F27B1A53600CA6FA4 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		67A0263B279790EB00C5B7FA /* Recipe List App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe List App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67A0263E279790EB00C5B7FA /* Recipe_List_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_List_App.swift; sourceTree = "<group>"; };
 		67A02642279790ED00C5B7FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67A02645279790ED00C5B7FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		67A026512797918200C5B7FA /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
-		67CF6DB127AE09C3003DE916 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		67CF6DB327AE09CB003DE916 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		67CF6DB527AE09D7003DE916 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		67CF6DB727AE09DE003DE916 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -84,8 +84,8 @@
 		67A0264C2797911F00C5B7FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				67CF6DB127AE09C3003DE916 /* RecipeListView.swift */,
 				67CF6DB927AEBF9E003DE916 /* RecipeDetailView.swift */,
+				6705875F27B1A53600CA6FA4 /* RecipeListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,10 +195,10 @@
 			files = (
 				67CF6DB827AE09DE003DE916 /* DataService.swift in Sources */,
 				67CF6DBA27AEBF9E003DE916 /* RecipeDetailView.swift in Sources */,
-				67CF6DB227AE09C3003DE916 /* RecipeListView.swift in Sources */,
 				67CF6DB427AE09CB003DE916 /* RecipeModel.swift in Sources */,
 				67A0263F279790EB00C5B7FA /* Recipe_List_App.swift in Sources */,
 				67CF6DB627AE09D7003DE916 /* Recipe.swift in Sources */,
+				6705876027B1A53600CA6FA4 /* RecipeListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
