@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecipeDetailView: View {
-    var recipe:Recipe //unset because we want the list view to determine which view is shown
+    var recipe:Recipe // unset because we want the list view to determine which view is shown
     
     var body: some View {
         
@@ -60,7 +60,6 @@ struct RecipeDetailView_Previews: PreviewProvider {
         // Create a dummy recipe and passit nto the detail view so that we can see a preview
         
         let model = RecipeModel()
-        
         
         RecipeDetailView(recipe: model.recipes[0])
     }
