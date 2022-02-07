@@ -84,8 +84,8 @@
 		67A0264C2797911F00C5B7FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				67CF6DB927AEBF9E003DE916 /* RecipeDetailView.swift */,
 				6705875F27B1A53600CA6FA4 /* RecipeListView.swift */,
+				67CF6DB927AEBF9E003DE916 /* RecipeDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
