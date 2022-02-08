@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipeListView: View {
     // Give Access to RecipeModel
     @EnvironmentObject var model:RecipeModel
+    
     // Reference the ViewModel
     //        @ObservedObject var model = RecipeModel()
     

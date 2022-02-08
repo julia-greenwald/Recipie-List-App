@@ -13,6 +13,7 @@ struct RecipeFeatureView: View {
     
     // Give Access to RecipeModel
     @EnvironmentObject var model:RecipeModel
+    @State var isDetailViewShowing = false
     
     var body: some View {
         
@@ -33,23 +34,35 @@ struct RecipeFeatureView: View {
                         
                         // Only hsow those that should be featured
                         if model.recipes[index].featured {
-                            
-                            // Recipe Card
-                            ZStack {
-                                Rectangle().foregroundColor(.white)
+                            // Recipe card button
+                            Button (action: {
+                                // Show the recipe Detail sheet
+                                self.isDetailViewShowing = true
                                 
-                                VStack(spacing: 0) {
-                                    Image(model.recipes[index].image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .clipped()
-                                    Text(model.recipes[index].name)
-                                        .padding(5)
+                            }, label: {
+                                
+                                // MARK: Recipe Card
+                                ZStack {
+                                    Rectangle().foregroundColor(.white)
+                                    
+                                    VStack(spacing: 0) {
+                                        Image(model.recipes[index].image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .clipped()
+                                        Text(model.recipes[index].name)
+                                            .padding(5)
+                                    }
                                 }
-                            }
-                            .frame(width: geo.size.width-40, height: geo.size.height-100, alignment: .center)
-                            .cornerRadius(15)
-                            .shadow(color:.green, radius:10, x:-5, y:5)
+                            })
+                                .sheet(isPresented: $isDetailViewShowing) {
+                                    // Show the Recipe Detail View
+                                    RecipeDetailView(recipe: model.recipes[index])
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                                .frame(width: geo.size.width-40, height: geo.size.height-100, alignment: .center)
+                                .cornerRadius(15)
+                                .shadow(color:.green, radius:10, x:-5, y:5)
                         }
                         
                     }
