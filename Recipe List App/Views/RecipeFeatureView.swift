@@ -14,27 +14,29 @@ struct RecipeFeatureView: View {
     // Give Access to RecipeModel
     @EnvironmentObject var model:RecipeModel
     @State var isDetailViewShowing = false
+    @State var tabSelectionIndex = 0
     
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 0){
+        VStack(alignment: .leading, spacing: 0) {
             
             Text("Featured Recipe")
                 .bold()
                 .padding(.leading)
                 .padding(.top, 40)
                 .font(.largeTitle)
-                
             
             GeometryReader {geo in
-                TabView {
+                TabView (selection: $tabSelectionIndex) {
+//                TabView {
                     
                     // Loop through each recipe
                     ForEach (0..<model.recipes.count) { index in
                         
-                        // Only hsow those that should be featured
+                        // Only show those that should be featured
                         if model.recipes[index].featured {
-                            // Recipe card button
+                            
+                            // MARK: Recipe card button
                             Button (action: {
                                 // Show the recipe Detail sheet
                                 self.isDetailViewShowing = true
@@ -53,37 +55,48 @@ struct RecipeFeatureView: View {
                                         Text(model.recipes[index].name)
                                             .padding(5)
                                     }
+                                    
                                 }
                             })
+                                .tag(index)
                                 .sheet(isPresented: $isDetailViewShowing) {
-                                    // Show the Recipe Detail View
+                                    //                                    // Show the Recipe Detail View
                                     RecipeDetailView(recipe: model.recipes[index])
                                 }
                                 .buttonStyle(PlainButtonStyle())
                                 .frame(width: geo.size.width-40, height: geo.size.height-100, alignment: .center)
                                 .cornerRadius(15)
                                 .shadow(color:.green, radius:10, x:-5, y:5)
-                        }
-                        
-                    }
-                    
-                    
-                }
+                        } // End of if featured
+                    } // End of ForEach
+                } // End of Tab View
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-            }
-            VStack (alignment: .leading, spacing: 10){
+            }// end of georeader
+            
+            VStack (alignment: .leading, spacing: 10) {
                 Text("Preparation Time: ")
                     .font(.headline)
-                Text("1 hour")
+                Text(model.recipes[tabSelectionIndex].prepTime)
+                //Text("test")
                 Text("Highlights")
                     .font(.headline)
-                Text("Healthy, Hearty")
+                RecipeHighlights(highlights: model.recipes[tabSelectionIndex].highlights)
+//                Text("test")
             }
-            .padding(.leading)
+            .padding([.leading, .bottom])
         }
-        .padding(.leading)
-        
+        .onAppear(perform: {
+            setFeaturedIndex()
+        })
+    }
+    
+    func setFeaturedIndex() {
+        // Find the index first recipie that is featured
+        let index = model.recipes.firstIndex { (recipe) -> Bool in
+            return recipe.featured
+        }
+        tabSelectionIndex = index ?? 0
     }
 }
 
